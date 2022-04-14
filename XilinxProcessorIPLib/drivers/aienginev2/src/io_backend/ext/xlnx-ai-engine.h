@@ -10,8 +10,12 @@
 #include <stdlib.h>
 #endif
 
+#ifdef __linux
 #include <linux/ioctl.h>
 #include <linux/types.h>
+#else
+#include <sys/ioctl.h>
+#endif
 
 enum aie_reg_op {
 	AIE_REG_WRITE,
